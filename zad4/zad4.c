@@ -1,12 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char const *argv[])
+
+int nwd(int a, int b)
 {
-  int a,b;
-  {scanf("%d %d" &a, &b );
-int wynik=a*b;
-printf("wynik a*b= %d\n", wynik );
+    int c;
+    while(b) {
+        c = a % b;
+        a = b;
+        b = c;
+    }
+    return a;
 }
-  return 0;
+
+int main(void)
+{
+    int a, b;
+
+    printf("wynik: ");
+    scanf("%d %d", &a, &b);
+
+    printf("wynik: %d\n", (a*b)/nwd(a,b));
+
+    return 0;
 }

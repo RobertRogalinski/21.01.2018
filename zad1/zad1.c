@@ -1,22 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char const *argv[]) {
+int main(int argc, char const *argv[])
+{
 
-int count;
-printf("This program was called with \"%s\".\n",argv[0] );
-if (argc > 1)
+  int i;
+  for(i=0; i<=argc; i++)
+  {
+    if(argc == i)
     {
-      for (count = 1; count < argc; count++)
-	{
-	  printf("argv[%d] = %s\n", count, argv[count]);
-	}
+      printf("argc==%d\n", i);
     }
-  else
-    {
-      printf("The command had no other arguments.\n");
-    }
+  }
 
-
-  return EXIT_SUCCESS;
+  return 0;
 }
